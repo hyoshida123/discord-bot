@@ -1,1 +1,2 @@
-# discord-bot
+# Discord Bot for OctaBytes Discord server
+
