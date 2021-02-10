@@ -26,6 +26,11 @@ async def on_message(message):
 
 @client.command(name='roll_dice', help='Simulates rolling dice.')
 async def roll(ctx, number_of_dice: int, number_of_sides: int):
+    if number_of_dice <= 0:
+        await ctx.channel.send("I need at least one dice, man.")
+    elif number_of_sides <= 0:
+        await ctx.channel.send("Such dice does not exist.")
+
     dice = [
         str(random.choice(range(1, number_of_sides + 1)))
         for _ in range(number_of_dice)
