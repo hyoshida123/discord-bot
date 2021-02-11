@@ -26,9 +26,6 @@ async def on_message(message):
 
 @client.command(name='roll_dice', help='Simulates rolling dice.')
 async def roll(ctx, number_of_dice: int, number_of_sides: int):
-    if number_of_dice is None or number_of_sides is None:
-        await ctx.channel.send("Give me the number of dices and its sides.")
-
     if number_of_dice <= 0:
         await ctx.channel.send("I need at least one dice, man.")
     elif number_of_sides <= 0:
